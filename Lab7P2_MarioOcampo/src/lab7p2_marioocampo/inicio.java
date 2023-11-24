@@ -33,7 +33,7 @@ public class inicio extends javax.swing.JFrame {
         jPanel2 = new javax.swing.JPanel();
         jButton4 = new javax.swing.JButton();
         jPanel3 = new javax.swing.JPanel();
-        jButton5 = new javax.swing.JButton();
+        eliminarR = new javax.swing.JButton();
         jLabel12 = new javax.swing.JLabel();
         Usuario = new javax.swing.JDialog();
         jLabel4 = new javax.swing.JLabel();
@@ -69,7 +69,16 @@ public class inicio extends javax.swing.JFrame {
         jLabel16 = new javax.swing.JLabel();
         productosR = new javax.swing.JTextField();
         jButton6 = new javax.swing.JButton();
+        jButton7 = new javax.swing.JButton();
         EliminarR = new javax.swing.JDialog();
+        jLabel17 = new javax.swing.JLabel();
+        jLabel18 = new javax.swing.JLabel();
+        busqueda = new javax.swing.JTextField();
+        jScrollPane3 = new javax.swing.JScrollPane();
+        imprimir = new javax.swing.JTextArea();
+        jButton5 = new javax.swing.JButton();
+        jButton8 = new javax.swing.JButton();
+        jButton9 = new javax.swing.JButton();
         inicio = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
@@ -94,7 +103,7 @@ public class inicio extends javax.swing.JFrame {
             .addGap(0, 0, Short.MAX_VALUE)
         );
 
-        admin.getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, 402));
+        admin.getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, 410));
 
         jPanel2.setBackground(new java.awt.Color(255, 255, 255));
         jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -124,15 +133,15 @@ public class inicio extends javax.swing.JFrame {
 
         jPanel2.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
-        jButton5.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
-        jButton5.setForeground(new java.awt.Color(0, 0, 0));
-        jButton5.setText("Eliminar Restaurante");
-        jButton5.addMouseListener(new java.awt.event.MouseAdapter() {
+        eliminarR.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        eliminarR.setForeground(new java.awt.Color(0, 0, 0));
+        eliminarR.setText("Eliminar Restaurante");
+        eliminarR.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jButton5MouseClicked(evt);
+                eliminarRMouseClicked(evt);
             }
         });
-        jPanel2.add(jButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 240, -1, 61));
+        jPanel2.add(eliminarR, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 240, -1, 61));
 
         jLabel12.setFont(new java.awt.Font("Segoe UI", 1, 48)); // NOI18N
         jLabel12.setForeground(new java.awt.Color(0, 0, 0));
@@ -360,6 +369,13 @@ public class inicio extends javax.swing.JFrame {
             }
         });
 
+        jButton7.setText("Regresar");
+        jButton7.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton7MouseClicked(evt);
+            }
+        });
+
         javax.swing.GroupLayout crearRLayout = new javax.swing.GroupLayout(crearR.getContentPane());
         crearR.getContentPane().setLayout(crearRLayout);
         crearRLayout.setHorizontalGroup(
@@ -387,7 +403,10 @@ public class inicio extends javax.swing.JFrame {
                         .addGap(169, 169, 169))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, crearRLayout.createSequentialGroup()
                         .addComponent(jButton6)
-                        .addGap(278, 278, 278))))
+                        .addGap(278, 278, 278))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, crearRLayout.createSequentialGroup()
+                        .addComponent(jButton7)
+                        .addGap(55, 55, 55))))
         );
         crearRLayout.setVerticalGroup(
             crearRLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -408,18 +427,98 @@ public class inicio extends javax.swing.JFrame {
                     .addComponent(jLabel16))
                 .addGap(18, 18, 18)
                 .addComponent(jButton6)
-                .addContainerGap(64, Short.MAX_VALUE))
+                .addGap(18, 18, 18)
+                .addComponent(jButton7)
+                .addContainerGap(23, Short.MAX_VALUE))
         );
+
+        jLabel17.setFont(new java.awt.Font("Segoe UI", 1, 36)); // NOI18N
+        jLabel17.setText("Eliminar Restaurante");
+
+        jLabel18.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jLabel18.setText("Nombre del Restaurante:");
+
+        imprimir.setColumns(20);
+        imprimir.setRows(5);
+        jScrollPane3.setViewportView(imprimir);
+
+        jButton5.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jButton5.setText("Buscar");
+        jButton5.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton5MouseClicked(evt);
+            }
+        });
+        jButton5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton5ActionPerformed(evt);
+            }
+        });
+
+        jButton8.setText("Regresar");
+        jButton8.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton8MouseClicked(evt);
+            }
+        });
+
+        jButton9.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jButton9.setText("Eliminar");
+        jButton9.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton9MouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout EliminarRLayout = new javax.swing.GroupLayout(EliminarR.getContentPane());
         EliminarR.getContentPane().setLayout(EliminarRLayout);
         EliminarRLayout.setHorizontalGroup(
             EliminarRLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addGroup(EliminarRLayout.createSequentialGroup()
+                .addContainerGap(131, Short.MAX_VALUE)
+                .addGroup(EliminarRLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, EliminarRLayout.createSequentialGroup()
+                        .addComponent(jLabel17)
+                        .addGap(184, 184, 184))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, EliminarRLayout.createSequentialGroup()
+                        .addComponent(jButton9)
+                        .addGap(210, 210, 210)
+                        .addComponent(jButton8)
+                        .addGap(40, 40, 40))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, EliminarRLayout.createSequentialGroup()
+                        .addGroup(EliminarRLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, EliminarRLayout.createSequentialGroup()
+                                .addComponent(jLabel18)
+                                .addGap(18, 18, 18)
+                                .addGroup(EliminarRLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jButton5)
+                                    .addComponent(busqueda, javax.swing.GroupLayout.PREFERRED_SIZE, 323, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, EliminarRLayout.createSequentialGroup()
+                                .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 270, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(138, 138, 138)))
+                        .addGap(85, 85, 85))))
         );
         EliminarRLayout.setVerticalGroup(
             EliminarRLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addGroup(EliminarRLayout.createSequentialGroup()
+                .addGap(48, 48, 48)
+                .addComponent(jLabel17)
+                .addGap(30, 30, 30)
+                .addGroup(EliminarRLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel18)
+                    .addComponent(busqueda, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(15, 15, 15)
+                .addComponent(jButton5)
+                .addGap(18, 18, 18)
+                .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(EliminarRLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(EliminarRLayout.createSequentialGroup()
+                        .addGap(40, 40, 40)
+                        .addComponent(jButton8))
+                    .addGroup(EliminarRLayout.createSequentialGroup()
+                        .addGap(18, 18, 18)
+                        .addComponent(jButton9)))
+                .addContainerGap(21, Short.MAX_VALUE))
         );
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -526,12 +625,49 @@ public class inicio extends javax.swing.JFrame {
         productosR.setText("");
     }//GEN-LAST:event_jButton6MouseClicked
 
-    private void jButton5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton5MouseClicked
+    private void eliminarRMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_eliminarRMouseClicked
         EliminarR.setVisible(true);
         EliminarR.pack();
         EliminarR.setLocationRelativeTo(this);
         admin.setVisible(false);
+    }//GEN-LAST:event_eliminarRMouseClicked
+
+    private void jButton5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton5MouseClicked
+        for (restaurantes r : restaurante) {
+            if (busqueda.getText().equals(r.getNombre())) {
+                imprimir.setText(r.toString());
+            }else{
+                imprimir.setText("Este restaurante no existe");
+            }
+        }
     }//GEN-LAST:event_jButton5MouseClicked
+
+    private void jButton7MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton7MouseClicked
+        admin.setVisible(true);
+        admin.pack();
+        admin.setLocationRelativeTo(this);
+        crearR.setVisible(false);
+    }//GEN-LAST:event_jButton7MouseClicked
+
+    private void jButton8MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton8MouseClicked
+        admin.setVisible(true);
+        admin.pack();
+        admin.setLocationRelativeTo(this);
+        EliminarR.setVisible(false);
+    }//GEN-LAST:event_jButton8MouseClicked
+
+    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton5ActionPerformed
+
+    private void jButton9MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton9MouseClicked
+        for (restaurantes r : restaurante) {
+            if (busqueda.getText().equals(r.getNombre())) {
+                restaurante.remove(busqueda);
+                imprimir.setText("Restaurante Eliminado");
+            }
+        }
+    }//GEN-LAST:event_jButton9MouseClicked
 
     /**
      * @param args the command line arguments
@@ -576,11 +712,14 @@ public class inicio extends javax.swing.JFrame {
     private javax.swing.JTextField Usua;
     private javax.swing.JDialog Usuario;
     private javax.swing.JDialog admin;
+    private javax.swing.JTextField busqueda;
     private javax.swing.JTextField cont;
     private javax.swing.JTextField contra;
     private javax.swing.JTextField contraseña;
     private javax.swing.JDialog crearR;
+    private javax.swing.JButton eliminarR;
     private javax.swing.JButton entrarUsuario;
+    private javax.swing.JTextArea imprimir;
     private javax.swing.JButton ingresarT;
     private javax.swing.JPanel inicio;
     private javax.swing.JButton jButton1;
@@ -589,6 +728,9 @@ public class inicio extends javax.swing.JFrame {
     private javax.swing.JButton jButton4;
     private javax.swing.JButton jButton5;
     private javax.swing.JButton jButton6;
+    private javax.swing.JButton jButton7;
+    private javax.swing.JButton jButton8;
+    private javax.swing.JButton jButton9;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -597,6 +739,8 @@ public class inicio extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel16;
+    private javax.swing.JLabel jLabel17;
+    private javax.swing.JLabel jLabel18;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
@@ -610,6 +754,7 @@ public class inicio extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel3;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JTextArea jTextArea1;
     private javax.swing.JTree jTree1;
     private javax.swing.JDialog menu1;
