@@ -3,16 +3,16 @@ public class usuarios {
     private String nombre;
     private String usuario;
     private String contraseña;
-    private int saldo;
+
 
     public usuarios() {
     }
 
-    public usuarios(String nombre, String usuario, String contraseña, int saldo) {
+    public usuarios(String nombre, String usuario, String contraseña) {
         this.nombre = nombre;
         this.usuario = usuario;
         this.contraseña = contraseña;
-        this.saldo = saldo;
+
     }
 
     
@@ -41,13 +41,6 @@ public class usuarios {
         this.contraseña = contraseña;
     }
 
-    public int getSaldo() {
-        return saldo;
-    }
-
-    public void setSaldo(int saldo) {
-        this.saldo = saldo;
-    }
     
     
     @Override
@@ -55,8 +48,7 @@ public class usuarios {
         return "Usuarios" + "\n"
                 + " Nombre = " + nombre + "\n"
                 + " Usuario = " + usuario + "\n"
-                + " Contrase\u00f1a = " + contraseña + "\n"
-                + " Saldo = " + saldo;
+                + " Contrase\u00f1a = " + contraseña;
     }
     
     
