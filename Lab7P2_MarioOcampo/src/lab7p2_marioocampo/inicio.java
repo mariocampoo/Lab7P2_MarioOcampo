@@ -57,8 +57,12 @@ public class inicio extends javax.swing.JFrame {
         MU = new javax.swing.JButton();
         EU = new javax.swing.JButton();
         Tienda = new javax.swing.JDialog();
-        res = new javax.swing.JComboBox<>();
         jLabel21 = new javax.swing.JLabel();
+        res = new javax.swing.JComboBox<>();
+        jLabel22 = new javax.swing.JLabel();
+        jLabel23 = new javax.swing.JLabel();
+        prod = new javax.swing.JComboBox<>();
+        jButton13 = new javax.swing.JButton();
         crearR = new javax.swing.JDialog();
         jLabel13 = new javax.swing.JLabel();
         jLabel14 = new javax.swing.JLabel();
@@ -340,30 +344,62 @@ public class inicio extends javax.swing.JFrame {
                 .addContainerGap(76, Short.MAX_VALUE))
         );
 
-        jLabel21.setText("jLabel21");
+        jLabel21.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        jLabel21.setText("Seleccione el restaurante");
+
+        jLabel22.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        jLabel22.setText("Restaurante:");
+
+        jLabel23.setText("Productos:");
+
+        jButton13.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        jButton13.setText("Comprar");
+        jButton13.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton13MouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout TiendaLayout = new javax.swing.GroupLayout(Tienda.getContentPane());
         Tienda.getContentPane().setLayout(TiendaLayout);
         TiendaLayout.setHorizontalGroup(
             TiendaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(TiendaLayout.createSequentialGroup()
+                .addGap(149, 149, 149)
+                .addGroup(TiendaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jLabel23)
+                    .addComponent(jLabel22, javax.swing.GroupLayout.PREFERRED_SIZE, 74, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(TiendaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(res, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(prod, javax.swing.GroupLayout.PREFERRED_SIZE, 213, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(156, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, TiendaLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(TiendaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(TiendaLayout.createSequentialGroup()
-                        .addGap(226, 226, 226)
-                        .addComponent(res, javax.swing.GroupLayout.PREFERRED_SIZE, 147, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(TiendaLayout.createSequentialGroup()
-                        .addGap(264, 264, 264)
-                        .addComponent(jLabel21)))
-                .addContainerGap(228, Short.MAX_VALUE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, TiendaLayout.createSequentialGroup()
+                        .addComponent(jLabel21)
+                        .addGap(144, 144, 144))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, TiendaLayout.createSequentialGroup()
+                        .addComponent(jButton13)
+                        .addGap(248, 248, 248))))
         );
         TiendaLayout.setVerticalGroup(
             TiendaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(TiendaLayout.createSequentialGroup()
-                .addGap(36, 36, 36)
+                .addGap(47, 47, 47)
                 .addComponent(jLabel21)
-                .addGap(87, 87, 87)
-                .addComponent(res, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(210, Short.MAX_VALUE))
+                .addGap(37, 37, 37)
+                .addGroup(TiendaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(res, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel22))
+                .addGap(18, 18, 18)
+                .addGroup(TiendaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel23)
+                    .addComponent(prod, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(39, 39, 39)
+                .addComponent(jButton13)
+                .addContainerGap(154, Short.MAX_VALUE))
         );
 
         jLabel13.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
@@ -728,9 +764,11 @@ public class inicio extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton6MouseClicked
 
         public void llenar(){
+            
         for (restaurantes t : restaurante) {
             res.addItem(t.getNombre());
             res2.addItem(t.getNombre());
+            
    
         }
     }
@@ -816,6 +854,12 @@ public class inicio extends javax.swing.JFrame {
         admin.setVisible(false);
     }//GEN-LAST:event_jButton12MouseClicked
 
+    private void jButton13MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton13MouseClicked
+        
+    }//GEN-LAST:event_jButton13MouseClicked
+
+ 
+    
     /**
      * @param args the command line arguments
      */
@@ -876,6 +920,7 @@ public class inicio extends javax.swing.JFrame {
     private javax.swing.JButton jButton10;
     private javax.swing.JButton jButton11;
     private javax.swing.JButton jButton12;
+    private javax.swing.JButton jButton13;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
@@ -898,6 +943,8 @@ public class inicio extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel20;
     private javax.swing.JLabel jLabel21;
+    private javax.swing.JLabel jLabel22;
+    private javax.swing.JLabel jLabel23;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
@@ -913,6 +960,7 @@ public class inicio extends javax.swing.JFrame {
     private javax.swing.JDialog menu1;
     private javax.swing.JTextField nombre;
     private javax.swing.JTextField nombreR;
+    private javax.swing.JComboBox<String> prod;
     private javax.swing.JTextField productosR;
     private javax.swing.JComboBox<String> res;
     private javax.swing.JComboBox<String> res2;
@@ -923,4 +971,5 @@ public class inicio extends javax.swing.JFrame {
 
 ArrayList<usuarios> personas = new ArrayList();
 ArrayList<restaurantes> restaurante = new ArrayList();
+ArrayList productos = new ArrayList();
 }
