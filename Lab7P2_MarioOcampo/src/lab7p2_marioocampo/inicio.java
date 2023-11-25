@@ -6,6 +6,7 @@ package lab7p2_marioocampo;
 
 import java.util.ArrayList;
 import javax.swing.DefaultComboBoxModel;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -91,6 +92,15 @@ public class inicio extends javax.swing.JFrame {
         imp = new javax.swing.JTextArea();
         jButton10 = new javax.swing.JButton();
         jButton11 = new javax.swing.JButton();
+        modificar = new javax.swing.JDialog();
+        jLabel24 = new javax.swing.JLabel();
+        nom = new javax.swing.JTextField();
+        jLabel25 = new javax.swing.JLabel();
+        nuevoNom = new javax.swing.JTextField();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        txt = new javax.swing.JTextArea();
+        jLabel26 = new javax.swing.JLabel();
+        jButton14 = new javax.swing.JButton();
         inicio = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
@@ -311,6 +321,11 @@ public class inicio extends javax.swing.JFrame {
 
         MU.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         MU.setText("Modificar Usuario");
+        MU.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                MUMouseClicked(evt);
+            }
+        });
 
         EU.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         EU.setText("Eliminar Usuario");
@@ -657,6 +672,72 @@ public class inicio extends javax.swing.JFrame {
                 .addContainerGap(85, Short.MAX_VALUE))
         );
 
+        jLabel24.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jLabel24.setText("ingrese el nombre del usuario");
+
+        jLabel25.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jLabel25.setText("Ingrese nuevo nombre:");
+
+        txt.setColumns(20);
+        txt.setRows(5);
+        jScrollPane1.setViewportView(txt);
+
+        jLabel26.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jLabel26.setText("nuevo usuario:");
+
+        jButton14.setText("Guardar");
+        jButton14.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton14MouseClicked(evt);
+            }
+        });
+
+        javax.swing.GroupLayout modificarLayout = new javax.swing.GroupLayout(modificar.getContentPane());
+        modificar.getContentPane().setLayout(modificarLayout);
+        modificarLayout.setHorizontalGroup(
+            modificarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(modificarLayout.createSequentialGroup()
+                .addGroup(modificarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(modificarLayout.createSequentialGroup()
+                        .addGap(208, 208, 208)
+                        .addGroup(modificarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(jLabel24, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(nom)
+                            .addComponent(jLabel25, javax.swing.GroupLayout.PREFERRED_SIZE, 174, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(nuevoNom)))
+                    .addGroup(modificarLayout.createSequentialGroup()
+                        .addGap(97, 97, 97)
+                        .addComponent(jLabel26)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(37, 37, 37)
+                        .addComponent(jButton14)))
+                .addContainerGap(74, Short.MAX_VALUE))
+        );
+        modificarLayout.setVerticalGroup(
+            modificarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(modificarLayout.createSequentialGroup()
+                .addGap(93, 93, 93)
+                .addComponent(jLabel24)
+                .addGap(18, 18, 18)
+                .addComponent(nom, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(jLabel25)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(nuevoNom, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(modificarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(modificarLayout.createSequentialGroup()
+                        .addGap(28, 28, 28)
+                        .addGroup(modificarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel26))
+                        .addContainerGap(53, Short.MAX_VALUE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, modificarLayout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jButton14)
+                        .addGap(89, 89, 89))))
+        );
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -759,8 +840,8 @@ public class inicio extends javax.swing.JFrame {
         nombreR.setText("");
         ubiR.setText("");
         productosR.setText("");
-        
         llenar();
+        llenado();
     }//GEN-LAST:event_jButton6MouseClicked
 
         public void llenar(){
@@ -768,10 +849,14 @@ public class inicio extends javax.swing.JFrame {
         for (restaurantes t : restaurante) {
             res.addItem(t.getNombre());
             res2.addItem(t.getNombre());
-            
-   
         }
+        
     }
+        public void llenado(){
+            for (productos p : produ) {
+                prod.addItem(p.getNombre());
+            }
+        }
     
     
     private void eliminarRMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_eliminarRMouseClicked
@@ -855,8 +940,24 @@ public class inicio extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton12MouseClicked
 
     private void jButton13MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton13MouseClicked
-        
+        JOptionPane.showInputDialog("Compra Exitosa");
     }//GEN-LAST:event_jButton13MouseClicked
+
+    private void MUMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_MUMouseClicked
+        modificar.setVisible(true);
+        modificar.pack();
+        modificar.setLocationRelativeTo(this);
+        menu1.setVisible(false);
+    }//GEN-LAST:event_MUMouseClicked
+
+    private void jButton14MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton14MouseClicked
+        for (usuarios p : personas) {
+            if (nom.getText().equals(p.getNombre())) {
+                p.setNombre(nuevoNom.getText());
+                txt.setText(p.toString());
+            }
+        }
+    }//GEN-LAST:event_jButton14MouseClicked
 
  
     
@@ -921,6 +1022,7 @@ public class inicio extends javax.swing.JFrame {
     private javax.swing.JButton jButton11;
     private javax.swing.JButton jButton12;
     private javax.swing.JButton jButton13;
+    private javax.swing.JButton jButton14;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
@@ -945,6 +1047,9 @@ public class inicio extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel21;
     private javax.swing.JLabel jLabel22;
     private javax.swing.JLabel jLabel23;
+    private javax.swing.JLabel jLabel24;
+    private javax.swing.JLabel jLabel25;
+    private javax.swing.JLabel jLabel26;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
@@ -955,15 +1060,20 @@ public class inicio extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
+    private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JScrollPane jScrollPane4;
     private javax.swing.JDialog menu1;
+    private javax.swing.JDialog modificar;
+    private javax.swing.JTextField nom;
     private javax.swing.JTextField nombre;
     private javax.swing.JTextField nombreR;
+    private javax.swing.JTextField nuevoNom;
     private javax.swing.JComboBox<String> prod;
     private javax.swing.JTextField productosR;
     private javax.swing.JComboBox<String> res;
     private javax.swing.JComboBox<String> res2;
+    private javax.swing.JTextArea txt;
     private javax.swing.JTextField ubiR;
     private javax.swing.JTextField usu;
     private javax.swing.JTextField usuario;
@@ -971,5 +1081,5 @@ public class inicio extends javax.swing.JFrame {
 
 ArrayList<usuarios> personas = new ArrayList();
 ArrayList<restaurantes> restaurante = new ArrayList();
-ArrayList productos = new ArrayList();
+ArrayList <productos> produ = new ArrayList();
 }
