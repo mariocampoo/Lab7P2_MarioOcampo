@@ -6,15 +6,15 @@ public class restaurantes {
    private String nombre;
    private String ubicacion;
    private ArrayList <productos> producto = new ArrayList();
-   private int saldo;
+
 
     public restaurantes() {
     }
 
-    public restaurantes(String nombre, String ubicacion, int saldo) {
+    public restaurantes(String nombre, String ubicacion) {
         this.nombre = nombre;
         this.ubicacion = ubicacion;
-        this.saldo = saldo;
+
     }
 
     public String getNombre() {
@@ -41,21 +41,14 @@ public class restaurantes {
         this.producto = producto;
     }
 
-    public int getSaldo() {
-        return saldo;
-    }
 
-    public void setSaldo(int saldo) {
-        this.saldo = saldo;
-    }
 
     @Override
     public String toString() {
         return "Restaurantes" + "\n"
                 + " Nombre = " + nombre + "\n"
                 + " Ubicacion = " + ubicacion + "\n"
-                + " Producto = " + producto + "\n"
-                + " Saldo = " + saldo;
+                + " Producto = " + producto;
     }
    
    

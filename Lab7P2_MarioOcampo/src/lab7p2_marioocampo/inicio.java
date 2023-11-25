@@ -5,6 +5,7 @@
 package lab7p2_marioocampo;
 
 import java.util.ArrayList;
+import javax.swing.DefaultComboBoxModel;
 
 /**
  *
@@ -12,9 +13,8 @@ import java.util.ArrayList;
  */
 public class inicio extends javax.swing.JFrame {
 
-    /**
-     * Creates new form inicio
-     */
+    
+            
     public inicio() {
         initComponents();
     }
@@ -35,6 +35,7 @@ public class inicio extends javax.swing.JFrame {
         jPanel3 = new javax.swing.JPanel();
         eliminarR = new javax.swing.JButton();
         jLabel12 = new javax.swing.JLabel();
+        jButton12 = new javax.swing.JButton();
         Usuario = new javax.swing.JDialog();
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
@@ -56,10 +57,8 @@ public class inicio extends javax.swing.JFrame {
         MU = new javax.swing.JButton();
         EU = new javax.swing.JButton();
         Tienda = new javax.swing.JDialog();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        jTree1 = new javax.swing.JTree();
-        jScrollPane2 = new javax.swing.JScrollPane();
-        jTextArea1 = new javax.swing.JTextArea();
+        res = new javax.swing.JComboBox<>();
+        jLabel21 = new javax.swing.JLabel();
         crearR = new javax.swing.JDialog();
         jLabel13 = new javax.swing.JLabel();
         jLabel14 = new javax.swing.JLabel();
@@ -70,6 +69,7 @@ public class inicio extends javax.swing.JFrame {
         productosR = new javax.swing.JTextField();
         jButton6 = new javax.swing.JButton();
         jButton7 = new javax.swing.JButton();
+        res2 = new javax.swing.JComboBox<>();
         EliminarR = new javax.swing.JDialog();
         jLabel17 = new javax.swing.JLabel();
         jLabel18 = new javax.swing.JLabel();
@@ -79,6 +79,14 @@ public class inicio extends javax.swing.JFrame {
         jButton5 = new javax.swing.JButton();
         jButton8 = new javax.swing.JButton();
         jButton9 = new javax.swing.JButton();
+        eliminarU = new javax.swing.JDialog();
+        jLabel19 = new javax.swing.JLabel();
+        jLabel20 = new javax.swing.JLabel();
+        busq = new javax.swing.JTextField();
+        jScrollPane4 = new javax.swing.JScrollPane();
+        imp = new javax.swing.JTextArea();
+        jButton10 = new javax.swing.JButton();
+        jButton11 = new javax.swing.JButton();
         inicio = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
@@ -147,6 +155,14 @@ public class inicio extends javax.swing.JFrame {
         jLabel12.setForeground(new java.awt.Color(0, 0, 0));
         jLabel12.setText("Menu Admin");
         jPanel2.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 40, -1, -1));
+
+        jButton12.setText("regresar");
+        jButton12.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton12MouseClicked(evt);
+            }
+        });
+        jPanel2.add(jButton12, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 350, -1, -1));
 
         admin.getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 0, 510, 410));
 
@@ -294,6 +310,11 @@ public class inicio extends javax.swing.JFrame {
 
         EU.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         EU.setText("Eliminar Usuario");
+        EU.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                EUMouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout menu1Layout = new javax.swing.GroupLayout(menu1.getContentPane());
         menu1.getContentPane().setLayout(menu1Layout);
@@ -319,31 +340,30 @@ public class inicio extends javax.swing.JFrame {
                 .addContainerGap(76, Short.MAX_VALUE))
         );
 
-        jScrollPane1.setViewportView(jTree1);
-
-        jTextArea1.setColumns(20);
-        jTextArea1.setRows(5);
-        jScrollPane2.setViewportView(jTextArea1);
+        jLabel21.setText("jLabel21");
 
         javax.swing.GroupLayout TiendaLayout = new javax.swing.GroupLayout(Tienda.getContentPane());
         Tienda.getContentPane().setLayout(TiendaLayout);
         TiendaLayout.setHorizontalGroup(
             TiendaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(TiendaLayout.createSequentialGroup()
-                .addGap(20, 20, 20)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 403, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(73, Short.MAX_VALUE))
+                .addGroup(TiendaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(TiendaLayout.createSequentialGroup()
+                        .addGap(226, 226, 226)
+                        .addComponent(res, javax.swing.GroupLayout.PREFERRED_SIZE, 147, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(TiendaLayout.createSequentialGroup()
+                        .addGap(264, 264, 264)
+                        .addComponent(jLabel21)))
+                .addContainerGap(228, Short.MAX_VALUE))
         );
         TiendaLayout.setVerticalGroup(
             TiendaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(TiendaLayout.createSequentialGroup()
-                .addGap(19, 19, 19)
-                .addGroup(TiendaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jScrollPane2)
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 325, Short.MAX_VALUE))
-                .addContainerGap(27, Short.MAX_VALUE))
+                .addGap(36, 36, 36)
+                .addComponent(jLabel21)
+                .addGap(87, 87, 87)
+                .addComponent(res, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(210, Short.MAX_VALUE))
         );
 
         jLabel13.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
@@ -368,6 +388,11 @@ public class inicio extends javax.swing.JFrame {
                 jButton6MouseClicked(evt);
             }
         });
+        jButton6.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton6ActionPerformed(evt);
+            }
+        });
 
         jButton7.setText("Regresar");
         jButton7.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -380,55 +405,62 @@ public class inicio extends javax.swing.JFrame {
         crearR.getContentPane().setLayout(crearRLayout);
         crearRLayout.setHorizontalGroup(
             crearRLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(crearRLayout.createSequentialGroup()
-                .addContainerGap(180, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, crearRLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(crearRLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, crearRLayout.createSequentialGroup()
-                        .addGroup(crearRLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(crearRLayout.createSequentialGroup()
-                                .addGroup(crearRLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(jLabel14)
-                                    .addComponent(jLabel16)
-                                    .addComponent(jLabel15))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addGroup(crearRLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(crearRLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                        .addComponent(ubiR)
-                                        .addComponent(productosR, javax.swing.GroupLayout.PREFERRED_SIZE, 274, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addComponent(nombreR, javax.swing.GroupLayout.PREFERRED_SIZE, 274, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                            .addGroup(crearRLayout.createSequentialGroup()
-                                .addGap(81, 81, 81)
-                                .addComponent(jLabel13)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 57, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGap(169, 169, 169))
+                        .addComponent(jButton7)
+                        .addGap(55, 55, 55))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, crearRLayout.createSequentialGroup()
+                        .addComponent(jLabel13)
+                        .addGap(218, 218, 218))))
+            .addGroup(crearRLayout.createSequentialGroup()
+                .addGap(41, 41, 41)
+                .addGroup(crearRLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, crearRLayout.createSequentialGroup()
                         .addComponent(jButton6)
-                        .addGap(278, 278, 278))
+                        .addGap(109, 109, 109))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, crearRLayout.createSequentialGroup()
-                        .addComponent(jButton7)
-                        .addGap(55, 55, 55))))
+                        .addGroup(crearRLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jLabel14)
+                            .addComponent(jLabel16)
+                            .addComponent(jLabel15))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(crearRLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(crearRLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                .addComponent(ubiR)
+                                .addComponent(productosR, javax.swing.GroupLayout.PREFERRED_SIZE, 274, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(nombreR, javax.swing.GroupLayout.PREFERRED_SIZE, 274, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addGap(81, 81, 81)
+                .addComponent(res2, javax.swing.GroupLayout.PREFERRED_SIZE, 181, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 46, Short.MAX_VALUE))
         );
         crearRLayout.setVerticalGroup(
             crearRLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(crearRLayout.createSequentialGroup()
-                .addGap(87, 87, 87)
-                .addComponent(jLabel13)
-                .addGap(47, 47, 47)
-                .addGroup(crearRLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jLabel14)
-                    .addComponent(nombreR, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(crearRLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel15)
-                    .addComponent(ubiR, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
                 .addGroup(crearRLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(productosR, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel16))
-                .addGap(18, 18, 18)
-                .addComponent(jButton6)
-                .addGap(18, 18, 18)
-                .addComponent(jButton7)
+                    .addGroup(crearRLayout.createSequentialGroup()
+                        .addGap(336, 336, 336)
+                        .addComponent(jButton7))
+                    .addGroup(crearRLayout.createSequentialGroup()
+                        .addGap(54, 54, 54)
+                        .addComponent(jLabel13)
+                        .addGap(38, 38, 38)
+                        .addGroup(crearRLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jLabel14)
+                            .addGroup(crearRLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                .addComponent(nombreR, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(res2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(18, 18, 18)
+                        .addGroup(crearRLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel15)
+                            .addComponent(ubiR, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(18, 18, 18)
+                        .addGroup(crearRLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(productosR, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel16))
+                        .addGap(18, 18, 18)
+                        .addComponent(jButton6)))
                 .addContainerGap(23, Short.MAX_VALUE))
         );
 
@@ -521,6 +553,74 @@ public class inicio extends javax.swing.JFrame {
                 .addContainerGap(21, Short.MAX_VALUE))
         );
 
+        jLabel19.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        jLabel19.setText("Eliminar Usuario");
+
+        jLabel20.setText("Ingrese Nombre:");
+
+        imp.setColumns(20);
+        imp.setRows(5);
+        jScrollPane4.setViewportView(imp);
+
+        jButton10.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        jButton10.setText("Buscar");
+        jButton10.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton10MouseClicked(evt);
+            }
+        });
+
+        jButton11.setText("Eliminar");
+        jButton11.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton11MouseClicked(evt);
+            }
+        });
+
+        javax.swing.GroupLayout eliminarULayout = new javax.swing.GroupLayout(eliminarU.getContentPane());
+        eliminarU.getContentPane().setLayout(eliminarULayout);
+        eliminarULayout.setHorizontalGroup(
+            eliminarULayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(eliminarULayout.createSequentialGroup()
+                .addGroup(eliminarULayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(eliminarULayout.createSequentialGroup()
+                        .addGap(273, 273, 273)
+                        .addComponent(jLabel19))
+                    .addGroup(eliminarULayout.createSequentialGroup()
+                        .addGap(164, 164, 164)
+                        .addComponent(jLabel20)
+                        .addGap(18, 18, 18)
+                        .addComponent(busq, javax.swing.GroupLayout.PREFERRED_SIZE, 204, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(29, 29, 29)
+                        .addComponent(jButton10)))
+                .addContainerGap(87, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, eliminarULayout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addGroup(eliminarULayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, eliminarULayout.createSequentialGroup()
+                        .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 301, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(148, 148, 148))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, eliminarULayout.createSequentialGroup()
+                        .addComponent(jButton11)
+                        .addGap(253, 253, 253))))
+        );
+        eliminarULayout.setVerticalGroup(
+            eliminarULayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(eliminarULayout.createSequentialGroup()
+                .addGap(75, 75, 75)
+                .addComponent(jLabel19)
+                .addGap(40, 40, 40)
+                .addGroup(eliminarULayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel20)
+                    .addComponent(busq, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jButton10))
+                .addGap(18, 18, 18)
+                .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(jButton11)
+                .addContainerGap(85, Short.MAX_VALUE))
+        );
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -564,9 +664,9 @@ public class inicio extends javax.swing.JFrame {
             admin.setVisible(true);
             admin.pack();
             admin.setLocationRelativeTo(this);
-            
             usuario.setText("");
             contraseña.setText("");
+            
             
             
         }
@@ -618,13 +718,24 @@ public class inicio extends javax.swing.JFrame {
     }//GEN-LAST:event_nombreRActionPerformed
 
     private void jButton6MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton6MouseClicked
-        restaurantes r = new restaurantes(nombreR.getText(), ubiR.getText(), 0);
+        restaurantes r = new restaurantes(nombreR.getText(), ubiR.getText());
         restaurante.add(r);
         nombreR.setText("");
         ubiR.setText("");
         productosR.setText("");
+        
+        llenar();
     }//GEN-LAST:event_jButton6MouseClicked
 
+        public void llenar(){
+        for (restaurantes t : restaurante) {
+            res.addItem(t.getNombre());
+            res2.addItem(t.getNombre());
+   
+        }
+    }
+    
+    
     private void eliminarRMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_eliminarRMouseClicked
         EliminarR.setVisible(true);
         EliminarR.pack();
@@ -665,9 +776,45 @@ public class inicio extends javax.swing.JFrame {
             if (busqueda.getText().equals(r.getNombre())) {
                 restaurante.remove(busqueda);
                 imprimir.setText("Restaurante Eliminado");
+                busqueda.setText("");
             }
         }
     }//GEN-LAST:event_jButton9MouseClicked
+
+    private void EUMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_EUMouseClicked
+        eliminarU.setVisible(true);
+        eliminarU.pack();
+        eliminarU.setLocationRelativeTo(this);
+        menu1.setVisible(false);
+    }//GEN-LAST:event_EUMouseClicked
+
+    private void jButton10MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton10MouseClicked
+        for (usuarios p : personas) {
+            if (busq.getText().equals(p.getNombre())) {
+                imp.setText(p.toString());
+            }
+        }
+    }//GEN-LAST:event_jButton10MouseClicked
+
+    private void jButton11MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton11MouseClicked
+        
+            if (personas.contains(busq)) {
+                personas.remove(busq);
+                imp.setText("Usuario Eliminado");
+            }else{
+                imp.setText("Este Usuario no existe");
+            }
+        
+    }//GEN-LAST:event_jButton11MouseClicked
+
+    private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton6ActionPerformed
+
+    private void jButton12MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton12MouseClicked
+        inicio.setVisible(true);
+        admin.setVisible(false);
+    }//GEN-LAST:event_jButton12MouseClicked
 
     /**
      * @param args the command line arguments
@@ -712,17 +859,23 @@ public class inicio extends javax.swing.JFrame {
     private javax.swing.JTextField Usua;
     private javax.swing.JDialog Usuario;
     private javax.swing.JDialog admin;
+    private javax.swing.JTextField busq;
     private javax.swing.JTextField busqueda;
     private javax.swing.JTextField cont;
     private javax.swing.JTextField contra;
     private javax.swing.JTextField contraseña;
     private javax.swing.JDialog crearR;
     private javax.swing.JButton eliminarR;
+    private javax.swing.JDialog eliminarU;
     private javax.swing.JButton entrarUsuario;
+    private javax.swing.JTextArea imp;
     private javax.swing.JTextArea imprimir;
     private javax.swing.JButton ingresarT;
     private javax.swing.JPanel inicio;
     private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton10;
+    private javax.swing.JButton jButton11;
+    private javax.swing.JButton jButton12;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
@@ -741,7 +894,10 @@ public class inicio extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel17;
     private javax.swing.JLabel jLabel18;
+    private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel20;
+    private javax.swing.JLabel jLabel21;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
@@ -752,15 +908,14 @@ public class inicio extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
-    private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
-    private javax.swing.JTextArea jTextArea1;
-    private javax.swing.JTree jTree1;
+    private javax.swing.JScrollPane jScrollPane4;
     private javax.swing.JDialog menu1;
     private javax.swing.JTextField nombre;
     private javax.swing.JTextField nombreR;
     private javax.swing.JTextField productosR;
+    private javax.swing.JComboBox<String> res;
+    private javax.swing.JComboBox<String> res2;
     private javax.swing.JTextField ubiR;
     private javax.swing.JTextField usu;
     private javax.swing.JTextField usuario;
